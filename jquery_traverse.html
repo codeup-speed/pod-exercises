@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            height: auto;
+            width: 400px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="row">
+<div class="column col-4" id="one">
+    <img src="img/frieza.jpeg">
+</div>
+<div class="column col-4" id="two">
+    <img src="img/broli.jpg">
+</div>
+<div class="column col-4" id="three">
+        <img src="img/vegeta.jpg">
+</div>
+</div>
+<div class="row">
+    <div class="column col-4">
+        <button id="button1">Click</button>
+    </div>
+    <div class="column col-4">
+        <button id="button2">Click</button>
+    </div>
+    <div class="column col-4">
+        <button id="button3">Click</button>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $("#button1").click(function() {
+        $("#two").html( "<img src='img/frieza.jpeg'>" );
+    });
+    $(function(){
+
+        var list = $("#one, #three").toArray();
+        var elemlength = list.length;
+        var randomnum = Math.floor(Math.random()*elemlength);
+        var randomitem = list[randomnum];
+        $("#button2").click(function() {
+        $(randomitem).html( "<img src='img/broli.jpg'>" );
+        })
+    });
+    $("#button3").click(function() {
+        $("#two").html( "<img src='img/vegeta.jpg'>" );
+    });
+</script>
+</body>
+</html>

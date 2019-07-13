@@ -131,4 +131,13 @@ h2 {
 .fancy-link:hover:after {
   transform: scaleX(1); }
 
-/*# sourceMappingURL=style.css.map */
+.blue-box2{
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin: 10px 10px 10px 0;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #000088;
+  display: none;
+}
