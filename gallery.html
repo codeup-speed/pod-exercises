@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            height: 300px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="gallery">
+    <img src="img/broli.jpg">
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(function () {
+
+        var galleryImage = $(".gallery").find("img").first();
+
+
+        var images = [
+            "img/broli.jpg",
+            "img/frieza.jpeg",
+            "img/vegeta.jpg"
+        ];
+
+        var i = 0;
+
+        setInterval(function() {
+
+            i = (i + 1) % images.length;
+
+            galleryImage.fadeOut(function() {
+
+                $(this).attr("src", images[i]);
+                $(this).fadeIn();
+            });
+
+            console.log(galleryImage.attr("src"));
+
+        }, 2000);
+
+    });
+</script>
+</body>
+</html>
