@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Materialize Nav Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+<!--PLAIN NAV BAR WITH RIGHT ALIGNED LINKS-->
+<!--<nav>-->
+<!--    <div class="nav-wrapper">-->
+<!--        <a href="#" class="brand-logo">Logo</a>-->
+<!--        <ul id="nav-mobile" class="right hide-on-med-and-down">-->
+<!--            <li><a href="sass.html">Sass</a></li>-->
+<!--            <li><a href="badges.html">Components</a></li>-->
+<!--            <li><a href="collapsible.html">JavaScript</a></li>-->
+<!--            <li></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--ALL THAT IS NEEDED TO DO A DROP DOWN NAVBAR. THE ABOVE CODE IS JUST TO COMPARE THE TWO NAV BARS. THIS CODE DOES WORK ON MY OWN COMPUTER IN THE BROWSER HOSTED WEBPAGE.-->
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+    </div>
+</nav>
+
+<!--INLINE JS-->
+<script>
+$(document).ready(function(){
+
+    //THIS FUNCTION IN MATERIALIZE HAS NOT BEEN UPDATED IN THEIR DOCS. THEY DID AWAY WITH THE JQUERY VERSION OF THE CODE BELOW.
+    // $('.modal').modal();
+    // $(".dropdown-trigger").dropdown({ hover: false });
+
+
+    //THIS CODE SHOULD BE USED IN PLACE IN ORDER TO UPDATE THE CODE AND HAVE A WORKING NAV BAR WITH DROP DOWN FUNCTIONALITY.
+    var dropdowns = document.querySelectorAll('.dropdown-trigger');
+    for (var i = 0; i < dropdowns.length; i++){
+        M.Dropdown.init(dropdowns[i]);
+    }
+
+
+});
+</script>
+
+
+</body>
+</html>
