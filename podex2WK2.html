@@ -1,0 +1,24 @@
+
+<!--Write a function addTo that accepts a number as a parameter and adds all natural numbers smaller or equal than the parameter. The result is to be returned. addTo(3) should return 1+2+3 = 6.-->
+<!--JS HERO-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math</title>
+</head>
+<body>
+
+<script>
+    var addTo = function(n) {
+        var sum = 0;
+        for (var i = 0; i <= n; i++) {
+            sum = sum + i;
+        }
+        return sum;
+    };
+    console.log(addTo(3))
+</script>
+</body>
+</html>
